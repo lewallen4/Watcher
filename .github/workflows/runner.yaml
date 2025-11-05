@@ -2,9 +2,9 @@ name: Generate and Publish Election Results
 
 on:
   workflow_dispatch:
-  schedule:
+  #schedule:
     # Run every 8 hours - uses cron syntax
-    - cron: '0 */8 * * *'
+    #- cron: '0 */8 * * *'
 
 # 1. Set permissions at the workflow level for the GITHUB_TOKEN
 permissions:
