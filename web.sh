@@ -122,8 +122,8 @@ cat << 'EOF'
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            flex: 0 0 calc(33.333% - 20px);
-            min-width: 220px;
+            flex: 0 0 calc(22.333% - 20px);
+            min-width: 300px;
         }
 
         .race-card::before {
