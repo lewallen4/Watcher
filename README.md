@@ -32,4 +32,4 @@ A Bash script that fetches, processes, and displays King County election results
 #### Viewing Results
 
 After running the script, the results will be automatically published to GitHub Pages where you can track King County Elections in real-time.
-[https://lewallen4.github.io/Watcher/]
+https://lewallen4.github.io/Watcher/
