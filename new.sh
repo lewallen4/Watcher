@@ -52,4 +52,3 @@ echo "RAWdata.json has been written."
 # Step 2: Filter out unwanted candidates and print cleaned data to console
 grep -v -E '"candidate":"(Times Over Voted|Times Counted|Write-in|Registered Voters|Times Under Voted)"' RAWdata.json > clean.json
 bash web.sh
-powershell -Command "Start-Process -FilePath 'election_dashboard.html' -WindowStyle Normal"
