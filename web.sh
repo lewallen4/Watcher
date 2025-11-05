@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Read the JSON file and create HTML output
+TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S PST" --date='-8 hours')
 {
 cat << 'EOF'
 <!DOCTYPE html>
@@ -399,7 +400,6 @@ cat << 'EOF'
         <div class="grid-container" id="races-container">
             <!-- Race cards will be populated here -->
 EOF
-
 # Process the JSON data and generate HTML race cards
 awk '
 function escape_html(str) {
@@ -660,5 +660,6 @@ cat << 'EOF'
 </html>
 EOF
 } > election_dashboard.html
+sed -i '376i <p>Generated: 2025-11-04 22:00:06 PST</p>' election_dashboard.html
 
 echo "Ultra-modern dashboard generated: election_dashboard.html"
