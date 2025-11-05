@@ -11,23 +11,29 @@ NR == 1 {
         if($i == "Ballot Title") ballot_title_col = i
         if($i == "Ballot Response") ballot_response_col = i
         if($i == "Votes") votes_col = i
+        if($i == "District Name") district_subheading_col = i
     }
     next
 }
 
 {
     # Extract relevant fields
-    race = $(ballot_title_col)
+    ballot_title = $(ballot_title_col)
     candidate = $(ballot_response_col)
     votes = $(votes_col)
+    district_subheading = $(district_subheading_col)
     
     # Clean up any quotes that might be in the fields
-    gsub(/"/, "", race)
+    gsub(/"/, "", ballot_title)
     gsub(/"/, "", candidate)
     gsub(/"/, "", votes)
+    gsub(/"/, "", district_subheading)
     
     # Skip unwanted entries
     if(candidate ~ /^(Times Over Voted|Times Counted|Write-in|Registered Voters|Times Under Voted)$/) next
+    
+    # Combine district subheading and ballot title for race field
+    race = district_subheading " - " ballot_title
     
     # Create key for aggregation
     key = race "|" candidate
@@ -60,5 +66,4 @@ grep -v -E '"candidate":"(Times Over Voted|Times Counted|Write-in|Registered Vot
 
 # Continue with your existing workflow
 bash web.sh
-
-# powershell -Command "Start-Process -FilePath 'election_dashboard.html' -WindowStyle Normal"
+#powershell -Command "Start-Process -FilePath 'election_dashboard.html' -WindowStyle Normal"
