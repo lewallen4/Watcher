@@ -60,4 +60,5 @@ grep -v -E '"candidate":"(Times Over Voted|Times Counted|Write-in|Registered Vot
 
 # Continue with your existing workflow
 bash web.sh
-powershell -Command "Start-Process -FilePath 'election_dashboard.html' -WindowStyle Normal"
+
+# powershell -Command "Start-Process -FilePath 'election_dashboard.html' -WindowStyle Normal"
