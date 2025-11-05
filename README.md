@@ -32,7 +32,7 @@ A Bash script that fetches, processes, and displays King County election results
 #### Viewing Results
 
     
-##### After running the script, the results will be automatically published to GitHub Pages where you can track King County Elections in real-time.
+##### After running the script, the results will be automatically published to GitHub Pages where you can track King County Elections in real-time. As long as I'm alive, I'll probably update this during voting times. so you can just click the link below and see results. so far WA does not publish results before polls close.
 ###### https://lewallen4.github.io/Watcher
 ---
 <img src="https://raw.githubusercontent.com/lewallen4/Watcher/main/docs/Screenshot.png?raw=true" 
