@@ -1,0 +1,41 @@
+name: Generate and Publish Election Results
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Make new.sh executable
+      run: chmod +x new.sh
+      
+    - name: Run new.sh script
+      run: ./new.sh
+      
+    - name: Verify HTML file was created
+      run: |
+        if [ ! -f election_dashboard.html ]; then
+          echo "Error: election_dashboard.html was not created"
+          exit 1
+        fi
+        
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: .
+        # Only upload the HTML file and any necessary assets
+        # You can modify this path if you have other files to include
+        
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
