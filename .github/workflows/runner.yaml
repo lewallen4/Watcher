@@ -1,8 +1,6 @@
 name: Generate and Publish Election Results
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -19,7 +17,7 @@ jobs:
        ls -la
       
     - name: Run new.sh script
-      run: ./new.sh
+      run: bash new.sh
       
     - name: Verify HTML file was created
       run: |
