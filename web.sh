@@ -1,7 +1,13 @@
 #!/bin/bash
 
 # Read the JSON file and create HTML output
-TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S PST" --date='-8 hours')
+if [[ "$OSTYPE" == "msys" ]]; then
+    # Git Bash on Windows
+    TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S PST" --date='-8 hours')
+else
+    # Linux / macOS
+    TIMESTAMP=$(TZ="America/Los_Angeles" date +"%Y-%m-%d %H:%M:%S %Z")
+fi
 {
 cat << 'EOF'
 <!DOCTYPE html>
@@ -660,6 +666,6 @@ cat << 'EOF'
 </html>
 EOF
 } > election_dashboard.html
-sed -i '376i <p>Generated: 2025-11-04 22:00:06 PST</p>' election_dashboard.html
+sed -i '376i <p>Generated: '"$TIMESTAMP"'</p>' election_dashboard.html
 
 echo "Ultra-modern dashboard generated: election_dashboard.html"
