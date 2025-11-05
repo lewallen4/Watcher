@@ -123,7 +123,7 @@ cat << 'EOF'
             position: relative;
             overflow: hidden;
             flex: 0 0 calc(33.333% - 20px);
-            min-width: 300px;
+            min-width: 220px;
         }
 
         .race-card::before {
