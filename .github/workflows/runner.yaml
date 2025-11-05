@@ -11,13 +11,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       
-    - name: Make new.sh executable
-      run: |
-       chmod +x new.sh
-       ls -la
-      
     - name: Run new.sh script
-      run: bash new.sh
+      run: sudo bash new.sh
       
     - name: Verify HTML file was created
       run: |
