@@ -27,13 +27,14 @@ A Bash script that fetches, processes, and displays King County election results
 
 #### Data Source
 
-```Data is sourced from the King County Elections API```
+##### Data is sourced from the King County Elections API
 
 #### Viewing Results
 
-https://lewallen4.github.io/Watcher/ <br>
-After running the script, the results will be automatically published to GitHub Pages where you can track King County Elections in real-time.
-<br><br>
+    
+##### After running the script, the results will be automatically published to GitHub Pages where you can track King County Elections in real-time.
+###### https://lewallen4.github.io/Watcher
+---
 <img src="https://raw.githubusercontent.com/lewallen4/Watcher/main/docs/Screenshot.png?raw=true" 
      alt="Watcher Screenshot" 
      width="500" 
