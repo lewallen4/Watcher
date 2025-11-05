@@ -3,6 +3,12 @@ name: Generate and Publish Election Results
 on:
   workflow_dispatch:
 
+# 1. Set permissions at the workflow level for the GITHUB_TOKEN
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   generate-and-publish:
     runs-on: ubuntu-latest
@@ -14,15 +20,19 @@ jobs:
     - name: Convert line endings to Unix format
       run: |
         sed -i 's/\r$//' new.sh
-        sed -i 's/\r$//' web.sh  # if web.sh exists
+        # Only convert web.sh if the file exists
+        if [ -f "web.sh" ]; then
+          sed -i 's/\r$//' web.sh
+        fi
       
     - name: Run new.sh script
-      run: sudo bash new.sh
+      run: bash new.sh  # 'sudo' is typically not needed and should be removed
       
     - name: Verify HTML file was created
       run: |
         if [ ! -f election_dashboard.html ]; then
           echo "Error: election_dashboard.html was not created"
+          ls -la  # List files for debugging
           exit 1
         fi
         
@@ -32,9 +42,8 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: .
-        # Only upload the HTML file and any necessary assets
-        # You can modify this path if you have other files to include
+        # Upload only the specific file or directory containing your site
+        path: election_dashboard.html  # or the directory where it's located, e.g., "./"
         
     - name: Deploy to GitHub Pages
       id: deployment
