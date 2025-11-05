@@ -35,7 +35,8 @@ jobs:
           ls -la  # List files for debugging
           exit 1
         fi
-        
+        mkdir www
+        cp election_dashboard.html www/election_dashboard.html
     - name: Setup Pages
       uses: actions/configure-pages@v4
       
@@ -43,7 +44,7 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       with:
         # Upload only the specific file or directory containing your site
-        path: election_dashboard.html  # or the directory where it's located, e.g., "./"
+        path: www/  # or the directory where it's located, e.g., "./"
         
     - name: Deploy to GitHub Pages
       id: deployment
