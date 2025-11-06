@@ -43,5 +43,5 @@ A Bash script that fetches, processes, and displays King County election results
 
 ---
 
-### Progressive Use License Agreement (PULA)
+### Grackle Use License Agreement (GULA)
 ###### By downloading, installing, or using this Software, you hereby affirm to uphold truth, justice, equity, and the democratic ideals of the American way. You further acknowledge and agree to defend and respect the sovereignty, self-determination, and human rights of all peoples, including but not limited to those of Ukraine, Palestine, Taiwan, Hong Kong, Tibet, Sudan, and any nation or community striving toward freedom and dignity. Use of this Software constitutes your pledge to oppose oppression, misinformation, and authoritarianism in all forms, and to act in good faith toward a more just, accepting, tolerant and sustainable world.
