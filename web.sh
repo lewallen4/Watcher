@@ -401,6 +401,9 @@ cat << 'EOF'
             <button class="btn" onclick="sortAlphabetically()">
                 <i class="fas fa-sort-alpha-down"></i> Sort A-Z
             </button>
+            <button class="btn" id="seattle-btn" onclick="toggleSeattle()">
+                <i class="fas fa-city"></i> Seattle Only
+            </button>
         </div>
 
         <div class="grid-container" id="races-container">
@@ -563,6 +566,7 @@ cat << 'EOF'
 
         let currentView = 'normal';
         let currentSort = 'default';
+        let seattleOnly = false;
 
         function toggleView(view) {
             currentView = view;
@@ -609,6 +613,23 @@ cat << 'EOF'
             });
             
             cards.forEach(card => container.appendChild(card));
+        }
+
+        // Toggle Seattle-only filter
+        function toggleSeattle() {
+            const btn = document.getElementById('seattle-btn');
+            seattleOnly = !seattleOnly;
+            btn.classList.toggle('active', seattleOnly);
+
+            const cards = document.querySelectorAll('.race-card');
+            cards.forEach(card => {
+                const title = card.querySelector('.race-title').textContent.toLowerCase();
+                if (seattleOnly && !title.includes('seattle')) {
+                    card.style.display = 'none';
+                } else {
+                    card.style.display = '';
+                }
+            });
         }
 
         // Initialize with some stats
