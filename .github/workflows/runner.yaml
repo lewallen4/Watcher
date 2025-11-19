@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     # Run every 8 hours - uses cron syntax
-#    - cron: '0 */1 * * *'
+    - cron: '0 */1 * * *'
 
 # 1. Set permissions at the workflow level for the GITHUB_TOKEN
 permissions:
