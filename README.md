@@ -10,8 +10,6 @@ A Bash script that fetches, processes, and displays King County election results
 
     Processes and aggregates votes by candidate and race
 
-    Filters out non-candidate entries (like "Write-in", "Registered Voters", etc.)
-
     Generates a clean web page with the results
 
     Automatically deploys to GitHub Pages for public viewing
@@ -24,7 +22,7 @@ A Bash script that fetches, processes, and displays King County election results
 
     Automatic Deployment: Self-publishing to web via GitHub Pages
 
-    Structured Output: Generates properly formatted JSON data
+    Human Readable Output: Generates properly formatted JSON data
 
 #### Data Source
 
@@ -33,7 +31,9 @@ A Bash script that fetches, processes, and displays King County election results
 #### Viewing Results
 
     
-##### After running the script, the results will be automatically published to GitHub Pages where you can track King County Elections in real-time. As long as I'm alive, I'll probably update this during voting times. so you can just click the link below and see results. so far WA does not publish results before polls close.
+##### After running the script, the results will be automatically published to an html file where you can track King County Elections each run. As long as I'm alive, I'll probably update this during voting times. so you can just click the link below and see results. so far WA does not publish results before polls close.
+
+Fully automated viewing available here.
 ###### https://lewallen4.github.io/Watcher
 ---
 <img src="https://raw.githubusercontent.com/lewallen4/Watcher/main/docs/Screenshot.png?raw=true" 
