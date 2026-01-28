@@ -50,6 +50,6 @@ jobs:
         # Upload only the specific file or directory containing your site
         path: www/  # or the directory where it's located, e.g., "./"
         
-    - name: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages woot
       id: deployment
       uses: actions/deploy-pages@v4
