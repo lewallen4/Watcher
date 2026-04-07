@@ -20,7 +20,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Convert line endings to Unix format
+    - name: Convert line endings to Unix format 
       run: |
         sed -i 's/\r$//' new.sh
         sed -i 's/\r$//' patch.sh
